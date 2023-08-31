@@ -1,23 +1,23 @@
-From 07625a74a0d3d0ef859e75b5d3fe883bdfd579aa Mon Sep 17 00:00:00 2001
-From: jeremyb31 <jeremy53561@gmail.com>
-Date: Tue, 15 Feb 2022 16:18:15 -0600
-Subject: [PATCH] Update btusb.c
+From 93b002b769ec3d10772ce63629e9ca112b51a1f1 Mon Sep 17 00:00:00 2001
+From: yesimxev <yesimxev@github.com>
+Date: Thu, 31 Aug 2023 00:39:40 +0100
+Subject: [PATCH] Add UB500 driver to btusb
 
 ---
- btusb.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/bluetooth/btusb.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/btusb.c b/btusb.c
-index 71286ce..caaacd7 100644
+diff --git a/drivers/bluetooth/btusb.c b/drivers/bluetooth/btusb.c
+index f2e84e09c970..abaf85664bfd 100644
 --- a/drivers/bluetooth/btusb.c
 +++ b/drivers/bluetooth/btusb.c
-@@ -451,6 +451,10 @@ static const struct usb_device_id blacklist_table[] = {
- 	{ USB_DEVICE(0x13d3, 0x3458), .driver_info = BTUSB_REALTEK },
+@@ -385,6 +385,9 @@ static const struct usb_device_id blacklist_table[] = {
  	{ USB_DEVICE(0x13d3, 0x3461), .driver_info = BTUSB_REALTEK },
  	{ USB_DEVICE(0x13d3, 0x3462), .driver_info = BTUSB_REALTEK },
-+
-+	/* Additional Realtek 8761B Bluetooth devices */
-+	{ USB_DEVICE(0x2357, 0x0604), .driver_info = BTUSB_REALTEK },
  
++        /* Additional Realtek 8761B Bluetooth devices */
++        { USB_DEVICE(0x2357, 0x0604), .driver_info = BTUSB_REALTEK },
++
  	/* Additional Realtek 8822BE Bluetooth devices */
- 	{ USB_DEVICE(0x13d3, 0x3526), .driver_info = BTUSB_REALTEK },
+ 	{ USB_DEVICE(0x0b05, 0x185c), .driver_info = BTUSB_REALTEK },
+ 

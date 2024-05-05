@@ -844,7 +844,7 @@ read_choice(){
 		   clear
 		   if [ "$THREADS" -gt "10" ]; then
 			## limit threads to simplify debugging 
-			THREADS = 10
+			THREADS=10
 		   fi
 		   make_kernel
 		   ;;
